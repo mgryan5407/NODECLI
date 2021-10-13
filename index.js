@@ -114,14 +114,17 @@ program
         data[todo].done= false;
         saveJson(todosPath, data);
         console.log(`${chalk.cyan('To-do salvo com sucesso!')}`);
+        showTodoTable(data);
     });
 
 program
     .command('backup')
     .description('Faz um backup dos to-dos')
     .action (() => {
-        shell.mkdir('-p', 'backup');
-        const command = shell.exec('mv ./todos.json ./ backup/todos.json', {silent: true });
+
+        shell.mkdir('-p', 'data');
+        shell.mkdir('-p', './data/backup');
+        const command = shell.exec('mv ./todos.json ./data/backup/todos.json', {silent: true });
         if (!command.code){
             console.log(chalk.green('Backup realizado com sucesso! To-dos zerados.'));
         }else {
