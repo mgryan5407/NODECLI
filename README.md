@@ -4,7 +4,10 @@ Para baixar o arquivo use o comando: git clone https://github.com/mgryan5407/NOD
 
 <<<<<<< HEAD
 
-Para rodar o script precisamos instalar as dependencias, use o comando: npm install
+Para rodar o script precisamos instalar as dependencias, use o comando: 
+```bash
+npm install
+```
 
 Precisamos linkar o comando, então use: 
 ```bash
